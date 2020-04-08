@@ -5,6 +5,7 @@ import io.micronaut.http.annotation.Get
 
 @Controller("/api/v1/test")
 class TestChildService: TestBaseService<TestChildObject>() {
-    // @Get(uri = "TestChildService-testMethodToBeOverridden")
-    // override fun testMethodToBeOverridden() = super.testMethodToBeOverridden()
+    override fun testMethodToOverride_NoAnnotationInChildService() = super.testMethodToOverride_NoAnnotationInChildService()
+    @Get(uri = "TestChildService-testMethodToOverride")
+    override fun testMethodToOverride() = super.testMethodToOverride()
 }
